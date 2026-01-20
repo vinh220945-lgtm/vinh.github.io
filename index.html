@@ -3,188 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VIP Portfolio - Võ Trường Vĩnh</title>
+  <title>Portfolio - Võ Trường Vĩnh</title>
   <style>
-    /* Reset */
-    * {margin:0; padding:0; box-sizing:border-box;}
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      animation: fadeInDown 1.5s ease;
-    }
-    header h1 {
-      font-size: 3em;
-      color: #ffd700;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-    }
-    header p {
-      font-size: 1.3em;
-      color: #ddd;
-      margin-top: 10px;
-    }
-
-    section {
-      margin-bottom: 40px;
-      background: rgba(255,255,255,0.05);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 1.2s ease;
-    }
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-    }
-    section h2 {
-      color: #ffd700;
-      margin-bottom: 15px;
-      border-left: 5px solid #ffd700;
-      padding-left: 10px;
-      font-size: 1.6em;
-    }
-    ul {list-style: none; padding-left: 0;}
-    ul li {margin-bottom: 8px;}
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: rgba(0,0,0,0.4);
-      border-top: 1px solid #444;
-      margin-top: 40px;
-    }
-    footer p {
-      color: #ccc;
-      font-size: 1.1em;
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from {opacity:0; transform: translateY(-30px);}
-      to {opacity:1; transform: translateY(0);}
-    }
-    @keyframes fadeInUp {
-      from {opacity:0; transform: translateY(30px);}
-      to {opacity:1; transform: translateY(0);}
-    }
-
-    /* Button style */
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-top: 15px;
-      background: #ffd700;
-      color: #000;
-      font-weight: bold;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .btn:hover {
-      background: #ffae00;
-      transform: scale(1.05);
-    }
+    body {font-family: 'Segoe UI', sans-serif; margin:0; background:#f4f4f4; color:#333;}
+    header {background:#222; color:#fff; text-align:center; padding:50px 20px;}
+    header img {width:120px; height:120px; border-radius:50%; border:4px solid #ffd700;}
+    nav {background:#444; display:flex; justify-content:center; padding:10px;}
+    nav a {color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;}
+    nav a:hover {color:#ffd700;}
+    .container {max-width:1100px; margin:auto; padding:20px;}
+    section {background:#fff; margin-bottom:30px; padding:25px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+    section h2 {margin-bottom:15px; border-left:5px solid #ffd700; padding-left:10px;}
+    .projects {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+    .project-card {background:#fafafa; border-radius:10px; padding:15px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+    .project-card img {width:100%; border-radius:10px;}
+    .timeline {border-left:3px solid #ffd700; padding-left:20px;}
+    .timeline div {margin-bottom:20px;}
+    footer {background:#222; color:#ccc; text-align:center; padding:20px;}
+    footer a {color:#ffd700; margin:0 10px; text-decoration:none;}
+    form input, form textarea {width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px;}
+    form button {background:#ffd700; border:none; padding:10px 20px; font-weight:bold; cursor:pointer;}
+    form button:hover {background:#ffae00;}
   </style>
 </head>
 <body>
+  <header>
+    <img src="https://via.placeholder.com/120" alt="Avatar">
+    <h1>Võ Trường Vĩnh</h1>
+    <p>Web Developer | Full-stack Developer</p>
+  </header>
+
+  <nav>
+    <a href="#about">Giới thiệu</a>
+    <a href="#projects">Dự án</a>
+    <a href="#skills">Kỹ năng</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#testimonials">Nhận xét</a>
+    <a href="#contact">Liên hệ</a>
+  </nav>
+
   <div class="container">
-    <header>
-      <h1>🌟 Võ Trường Vĩnh</h1>
-      <p>Lập Trình Viên Web | Full-stack Developer</p>
-      <a href="mailto:vinh220945@student.nctu.edu.vn" class="btn">Liên hệ ngay</a>
-    </header>
+    <section id="about">
+      <h2>👋 Giới thiệu</h2>
+      <p>Tôi là Võ Trường Vĩnh, sinh viên CNTT định hướng Web Developer. Đam mê công nghệ, thích học hỏi và mong muốn trở thành Full-stack Developer chuyên nghiệp.</p>
+    </section>
 
-    <section>
-      <h2>👤 Thông Tin Cá Nhân</h2>
+    <section id="projects">
+      <h2>🚀 Dự án nổi bật</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Project 1">
+          <h3>Website Bán Hàng</h3>
+          <p>Phát triển bằng PHP & MySQL, giao diện responsive.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Project 2">
+          <h3>Blog Cá Nhân</h3>
+          <p>Xây dựng bằng Laravel cơ bản, tích hợp CMS.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>🏆 Kỹ năng</h2>
       <ul>
-        <li><strong>Ngày sinh:</strong> 19/07/2004</li>
-        <li><strong>Email:</strong> vinh220945@student.nctu.edu.vn</li>
-        <li><strong>Số điện thoại:</strong> 0848959556</li>
-        <li><strong>Địa chỉ:</strong> Xã Lai Hòa, TP Cần Thơ</li>
-        <li><strong>Website:</strong> Facebook Võ Trường Vĩnh</li>
+        <li>HTML, CSS, JavaScript, PHP</li>
+        <li>MySQL, Laravel, WordPress</li>
+        <li>Git, VS Code, XAMPP</li>
+        <li>Kỹ năng mềm: teamwork, giải quyết vấn đề, sáng tạo</li>
       </ul>
     </section>
 
-    <section>
-      <h2>🎯 Mục Tiêu Nghề Nghiệp</h2>
-      <p>Định hướng trở thành Full-stack Developer chuyên nghiệp, phát triển kỹ năng lập trình, tích lũy kinh nghiệm thực tế và đóng góp cho các dự án công nghệ hiện đại.</p>
+    <section id="timeline">
+      <h2>📅 Timeline</h2>
+      <div class="timeline">
+        <div><strong>2022-2026:</strong> Học CNTT tại ĐH Nam Cần Thơ</div>
+        <div><strong>2026-2027:</strong> Lập trình Website tại TechSun</div>
+      </div>
     </section>
 
-    <section>
-      <h2>🎓 Học Vấn</h2>
-      <p><strong>2022 - 2026:</strong> Trường Đại Học Nam Cần Thơ – Công Nghệ Thông Tin</p>
-      <ul>
-        <li>Đào tạo bài bản về lập trình Web, cơ sở dữ liệu và hệ thống thông tin</li>
-        <li>Thành thạo HTML/CSS/JS, PHP, SQL</li>
-        <li>Thực hiện nhiều đồ án và dự án thực tế</li>
-      </ul>
+    <section id="testimonials">
+      <h2>💬 Nhận xét</h2>
+      <p>“Vĩnh là một lập trình viên trẻ đầy nhiệt huyết, luôn hoàn thành công việc đúng tiến độ.” – Nguyễn Đỗ Hoàng Vũ, Giám Đốc TechSun</p>
     </section>
 
-    <section>
-      <h2>💼 Kinh Nghiệm Làm Việc</h2>
-      <p><strong>2026 - 2027:</strong> TechSun – Lập Trình Website</p>
-      <ul>
-        <li>Phát triển và bảo trì website bằng HTML, CSS, JavaScript, PHP</li>
-        <li>Thiết kế giao diện và xử lý chức năng phía client</li>
-        <li>Làm việc với cơ sở dữ liệu MySQL</li>
-        <li>Phối hợp với team để hoàn thiện sản phẩm đúng tiến độ</li>
-      </ul>
+    <section id="contact">
+      <h2>📞 Liên hệ</h2>
+      <form>
+        <input type="text" placeholder="Tên của bạn">
+        <input type="email" placeholder="Email của bạn">
+        <textarea rows="5" placeholder="Tin nhắn..."></textarea>
+        <button type="submit">Gửi</button>
+      </form>
     </section>
-
-    <section>
-      <h2>🌍 Hoạt Động</h2>
-      <p><strong>2022 - 2025:</strong> Đoàn Thanh Niên – Thanh Niên Tình Nguyện</p>
-      <ul>
-        <li>Tham gia các hoạt động tình nguyện, hỗ trợ cộng đồng</li>
-        <li>Giúp đỡ học sinh và người dân khó khăn</li>
-        <li>Rèn luyện kỹ năng làm việc nhóm và tinh thần trách nhiệm</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>📜 Chứng Chỉ</h2>
-      <ul>
-        <li><strong>T12/2025:</strong> B2 Vstep</li>
-        <li><strong>T8/2026:</strong> Tốt nghiệp Trường Đại Học Nam Cần Thơ</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>🏆 Kỹ Năng & Công Cụ</h2>
-      <ul>
-        <li>Ngôn ngữ: HTML, CSS, JavaScript, PHP</li>
-        <li>Cơ sở dữ liệu: MySQL</li>
-        <li>Framework/CMS: Laravel (cơ bản), WordPress</li>
-        <li>Công cụ: Git, VS Code, XAMPP</li>
-        <li>Ngoại ngữ: Tiếng Anh B2 (VSTEP)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>🎶 Sở Thích</h2>
-      <ul>
-        <li>Đá bóng ⚽</li>
-        <li>Nghe nhạc 🎧</li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>✨ Võ Trường Vĩnh – Lập Trình Viên Web trẻ trung, năng động, đầy nhiệt huyết ✨</p>
-    </footer>
   </div>
+
+  <footer>
+    <p>Kết nối với tôi:</p>
+    <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Facebook</a>
+    <p>© 2026 Võ Trường Vĩnh – Portfolio cá nhân chuyên nghiệp</p>
+  </footer>
 </body>
 </html>
