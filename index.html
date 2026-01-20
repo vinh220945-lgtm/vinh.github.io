@@ -1,236 +1,190 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Võ Trường Vĩnh | Web Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Portfolio - Võ Trường Vĩnh</title>
+  <style>
+    /* Reset */
+    * {margin:0; padding:0; box-sizing:border-box;}
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', system-ui, sans-serif;
-}
-
-body{
-    background:#f8fafc;
-    color:#1f2937;
-    line-height:1.7;
-}
-
-/* ===== LAYOUT ===== */
-.wrapper{
-    max-width:1100px;
-    margin:60px auto;
-    background:#ffffff;
-    border-radius:16px;
-    box-shadow:0 20px 50px rgba(0,0,0,.08);
-    overflow:hidden;
-    display:grid;
-    grid-template-columns:320px 1fr;
-}
-
-/* ===== LEFT ===== */
-.left{
-    background:linear-gradient(180deg,#1e3a8a,#2563eb);
-    color:white;
-    padding:40px 30px;
-}
-
-.avatar{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    background:#e5e7eb;
-    margin-bottom:20px;
-}
-
-.left h1{
-    font-size:26px;
-}
-
-.left h2{
-    font-size:15px;
-    font-weight:400;
-    opacity:.9;
-    margin-bottom:30px;
-}
-
-.section{
-    margin-bottom:30px;
-}
-
-.section h3{
-    font-size:14px;
-    letter-spacing:1px;
-    margin-bottom:10px;
-    text-transform:uppercase;
-    opacity:.9;
-}
-
-.section p, .section li{
-    font-size:14px;
-    opacity:.95;
-}
-
-.section ul{
-    list-style:none;
-}
-
-/* ===== RIGHT ===== */
-.right{
-    padding:50px 40px;
-}
-
-.block{
-    margin-bottom:35px;
-}
-
-.block h3{
-    font-size:20px;
-    margin-bottom:15px;
-    position:relative;
-}
-
-.block h3::after{
-    content:'';
-    width:40px;
-    height:3px;
-    background:#2563eb;
-    display:block;
-    margin-top:6px;
-    border-radius:5px;
-}
-
-.item{
-    margin-bottom:20px;
-}
-
-.item h4{
-    font-size:16px;
-}
-
-.item span{
-    font-size:13px;
-    color:#6b7280;
-}
-
-.item p{
-    margin-top:5px;
-    font-size:14px;
-    color:#374151;
-}
-
-/* ===== SKILLS ===== */
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.skill{
-    background:#e0e7ff;
-    color:#1e3a8a;
-    padding:6px 14px;
-    border-radius:999px;
-    font-size:13px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-    .wrapper{
-        grid-template-columns:1fr;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.6;
     }
-    .left{
-        text-align:center;
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
     }
-    .avatar{
-        margin:0 auto 20px;
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeInDown 1.5s ease;
     }
-}
-</style>
+    header h1 {
+      font-size: 3em;
+      color: #ffd700;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    }
+    header p {
+      font-size: 1.3em;
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1.2s ease;
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+    section h2 {
+      color: #ffd700;
+      margin-bottom: 15px;
+      border-left: 5px solid #ffd700;
+      padding-left: 10px;
+      font-size: 1.6em;
+    }
+    ul {list-style: none; padding-left: 0;}
+    ul li {margin-bottom: 8px;}
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0,0,0,0.4);
+      border-top: 1px solid #444;
+      margin-top: 40px;
+    }
+    footer p {
+      color: #ccc;
+      font-size: 1.1em;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-30px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(30px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    /* Button style */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 15px;
+      background: #ffd700;
+      color: #000;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .btn:hover {
+      background: #ffae00;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>🌟 Võ Trường Vĩnh</h1>
+      <p>Lập Trình Viên Web | Full-stack Developer</p>
+      <a href="mailto:vinh220945@student.nctu.edu.vn" class="btn">Liên hệ ngay</a>
+    </header>
 
-<div class="wrapper">
+    <section>
+      <h2>👤 Thông Tin Cá Nhân</h2>
+      <ul>
+        <li><strong>Ngày sinh:</strong> 19/07/2004</li>
+        <li><strong>Email:</strong> vinh220945@student.nctu.edu.vn</li>
+        <li><strong>Số điện thoại:</strong> 0848959556</li>
+        <li><strong>Địa chỉ:</strong> Xã Lai Hòa, TP Cần Thơ</li>
+        <li><strong>Website:</strong> Facebook Võ Trường Vĩnh</li>
+      </ul>
+    </section>
 
-    <!-- LEFT -->
-    <aside class="left">
-        <div class="avatar"></div>
-        <h1>Võ Trường Vĩnh</h1>
-        <h2>Web Developer</h2>
+    <section>
+      <h2>🎯 Mục Tiêu Nghề Nghiệp</h2>
+      <p>Định hướng trở thành Full-stack Developer chuyên nghiệp, phát triển kỹ năng lập trình, tích lũy kinh nghiệm thực tế và đóng góp cho các dự án công nghệ hiện đại.</p>
+    </section>
 
-        <div class="section">
-            <h3>Contact</h3>
-            <p>📧 vinh220945@student.nctu.edu.vn</p>
-            <p>📞 0848 959 556</p>
-            <p>📍 Cần Thơ, Việt Nam</p>
-        </div>
+    <section>
+      <h2>🎓 Học Vấn</h2>
+      <p><strong>2022 - 2026:</strong> Trường Đại Học Nam Cần Thơ – Công Nghệ Thông Tin</p>
+      <ul>
+        <li>Đào tạo bài bản về lập trình Web, cơ sở dữ liệu và hệ thống thông tin</li>
+        <li>Thành thạo HTML/CSS/JS, PHP, SQL</li>
+        <li>Thực hiện nhiều đồ án và dự án thực tế</li>
+      </ul>
+    </section>
 
-        <div class="section">
-            <h3>Skills</h3>
-            <ul>
-                <li>HTML / CSS / JS</li>
-                <li>PHP / MySQL</li>
-                <li>Laravel (Basic)</li>
-                <li>Git / VS Code</li>
-            </ul>
-        </div>
+    <section>
+      <h2>💼 Kinh Nghiệm Làm Việc</h2>
+      <p><strong>2026 - 2027:</strong> TechSun – Lập Trình Website</p>
+      <ul>
+        <li>Phát triển và bảo trì website bằng HTML, CSS, JavaScript, PHP</li>
+        <li>Thiết kế giao diện và xử lý chức năng phía client</li>
+        <li>Làm việc với cơ sở dữ liệu MySQL</li>
+        <li>Phối hợp với team để hoàn thiện sản phẩm đúng tiến độ</li>
+      </ul>
+    </section>
 
-        <div class="section">
-            <h3>Languages</h3>
-            <p>English – B2</p>
-        </div>
-    </aside>
+    <section>
+      <h2>🌍 Hoạt Động</h2>
+      <p><strong>2022 - 2025:</strong> Đoàn Thanh Niên – Thanh Niên Tình Nguyện</p>
+      <ul>
+        <li>Tham gia các hoạt động tình nguyện, hỗ trợ cộng đồng</li>
+        <li>Giúp đỡ học sinh và người dân khó khăn</li>
+        <li>Rèn luyện kỹ năng làm việc nhóm và tinh thần trách nhiệm</li>
+      </ul>
+    </section>
 
-    <!-- RIGHT -->
-    <main class="right">
+    <section>
+      <h2>📜 Chứng Chỉ</h2>
+      <ul>
+        <li><strong>T12/2025:</strong> B2 Vstep</li>
+        <li><strong>T8/2026:</strong> Tốt nghiệp Trường Đại Học Nam Cần Thơ</li>
+      </ul>
+    </section>
 
-        <div class="block">
-            <h3>Profile</h3>
-            <p>
-                Sinh viên Công nghệ Thông tin định hướng Web Developer,
-                có nền tảng tốt về lập trình web, cơ sở dữ liệu và
-                mong muốn phát triển theo hướng Full-Stack.
-            </p>
-        </div>
+    <section>
+      <h2>🏆 Kỹ Năng & Công Cụ</h2>
+      <ul>
+        <li>Ngôn ngữ: HTML, CSS, JavaScript, PHP</li>
+        <li>Cơ sở dữ liệu: MySQL</li>
+        <li>Framework/CMS: Laravel (cơ bản), WordPress</li>
+        <li>Công cụ: Git, VS Code, XAMPP</li>
+        <li>Ngoại ngữ: Tiếng Anh B2 (VSTEP)</li>
+      </ul>
+    </section>
 
-        <div class="block">
-            <h3>Education</h3>
-            <div class="item">
-                <h4>Đại học Nam Cần Thơ</h4>
-                <span>2022 – 2026 | Công nghệ Thông tin</span>
-                <p>Được đào tạo bài bản về Web, Database và hệ thống thông tin.</p>
-            </div>
-        </div>
+    <section>
+      <h2>🎶 Sở Thích</h2>
+      <ul>
+        <li>Đá bóng ⚽</li>
+        <li>Nghe nhạc 🎧</li>
+      </ul>
+    </section>
 
-        <div class="block">
-            <h3>Experience</h3>
-            <div class="item">
-                <h4>Web Developer – TechSun</h4>
-                <span>2026 – 2027</span>
-                <p>
-                    Phát triển website bằng HTML, CSS, JavaScript, PHP.
-                    Làm việc với MySQL và phối hợp nhóm để hoàn thiện sản phẩm.
-                </p>
-            </div>
-        </div>
-
-        <div class="block">
-            <h3>Technical Skills</h3>
-            <div class="skills">
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">PHP</div>
-                <div class="skill">MySQL</div>
-                <div class="skill">Laravel</div>
-            </div>
-        </div>
-
-    </main>
-
-</div>
-
+    <footer>
+      <p>✨ Võ Trường Vĩnh – Lập Trình Viên Web trẻ trung, năng động, đầy nhiệt huyết ✨</p>
+    </footer>
+  </div>
 </body>
 </html>
